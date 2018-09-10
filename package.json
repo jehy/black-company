@@ -1,0 +1,39 @@
+{
+  "name": "black-company",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d pages",
+    "init": "node --use-strict bin/init.js",
+    "start": "node --use-strict index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "cheerio": "^1.0.0-rc.2",
+    "config": "^2.0.1",
+    "debug": "^3.1.0",
+    "fs-extra": "^7.0.0",
+    "gh-pages": "^1.2.0",
+    "googleapis": "^33.0.0",
+    "moment": "^2.22.2",
+    "pretty": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "nyc": "^13.0.1"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "engineStrict": true
+}
