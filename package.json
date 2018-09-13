@@ -6,7 +6,8 @@
   "scripts": {
     "deploy": "gh-pages -d pages",
     "init": "node --use-strict bin/init.js",
-    "start": "node --use-strict index.js"
+    "update": "node --use-strict update.js",
+    "update-cache": "node --use-strict update-cache.js"
   },
   "author": "",
   "license": "ISC",
