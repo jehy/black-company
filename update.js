@@ -62,6 +62,11 @@ const pages = [
     filename: 'full_rules',
     id: '1GRB51GVEao-w0FiTRN9UoRat39ZnxnFnqlwmd3nFfA4',
   },
+  {
+    name: 'Полные правила часть 2',
+    filename: 'full_rules_2',
+    id: '1cXqGzz6PPkZRRzROblWyueGc4a2NGoneJJ1sF0pUSE4',
+  },
 ];
 
 function getPagePath(filename) {
