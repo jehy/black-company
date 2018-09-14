@@ -1,31 +1,31 @@
 [
   {
-    "name": "Полигонные правила",
+    "name": "Полигонные правила ЧО2",
     "filename": "field_rules",
     "id": "19TZ8zxMk06LETb0qlGKj05qUbOvoVxoDKOzggkV2gvc"
   },
   {
-    "name": "Расширенные правила по медицине",
+    "name": "Дополнение по медицинским правилам для медиков",
     "filename": "medicine_rules",
     "id": "1Issd5Njr4trsLN8Qzb97wuDQVmSwePpdxqg4eG-N4cc"
   },
   {
-    "name": "Ключевые правила",
+    "name": "Анонсы правил",
     "filename": "main_rules",
     "id": "195B1llXPRZjSQNOLTHZD_-0JVv-wciSA-MstBGxGO9s"
   },
   {
-    "name": "Анонс второй игры",
+    "name": "Анонс 2.0 Перезагрузка",
     "filename": "second_anonce",
     "id": "1ssaYr-un0av-BkDzuBm8znTt8YiPNFNecM0Gi8ZOGd8"
   },
   {
-    "name": "Полные правила",
+    "name": "Все тексты одним файлом Хроники Черного Отряда (бета версия)",
     "filename": "full_rules",
     "id": "1GRB51GVEao-w0FiTRN9UoRat39ZnxnFnqlwmd3nFfA4"
   },
   {
-    "name": "Полные правила часть 2",
+    "name": "Игровые правила - Хроники Черного Отряда часть 2",
     "filename": "full_rules_2",
     "id": "1cXqGzz6PPkZRRzROblWyueGc4a2NGoneJJ1sF0pUSE4"
   }

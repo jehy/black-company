@@ -6,3 +6,4 @@ config/credentials.json
 config/token.json
 .nyc_output
 cache
+dist

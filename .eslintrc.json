@@ -1,10 +1,6 @@
 {
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "script",
-    "ecmaFeatures": {
-      "jsx": false
-    }
+    "sourceType": "script"
   },
   "env": {
     "browser": false,
@@ -15,7 +11,7 @@
   "overrides": [
     {
       "files": [
-        "gui/**/*.js"
+        "src/js/**/*.js"
       ],
       "env": {
         "browser": true,
@@ -28,24 +24,27 @@
     }
   ],
   "plugins": [
-    "standard"
+    "standard",
+    "promise"
   ],
   "rules": {
-    "strict": [
-      "error",
-      "global"
-    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": [
-          "gui/*/*.js",
-          "test/**/*.js",
-          "webpack.*.js"
+          "test/**.js",
+          "webpack.config",
+          "webpack.dev.js",
+          "webpack.prod.js",
+          "src/js/**/*.js"
         ]
       }
     ],
+    "strict": "off",
+    "object-curly-newline": "off",
+    "prefer-destructuring": "warn",
     "one-var": "off",
+    "function-paren-newline": "off",
     "no-mixed-operators": "off",
     "arrow-body-style": "off",
     "brace-style": "off",
@@ -57,7 +56,7 @@
     "no-unused-vars": "warn",
     "object-shorthand": "warn",
     "no-param-reassign": "warn",
-    "no-console": "error",
+    "no-console": "warn",
     "newline-per-chained-call": "off",
     "no-continue": "off",
     "no-multi-spaces": "off",
@@ -71,4 +70,3 @@
     ]
   }
 }
-

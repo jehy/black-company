@@ -38,24 +38,6 @@ function getCachePath(filename) {
   return `cache/${filename}.html`;
 }
 
-function getLinkPath(filename) {
-  return `${filename}.html`;
-}
-
-function makeIndexPage() {
-  const indexLinks = pages.map(page => `<li><a href="${getLinkPath(page.filename)}">${page.name}</a></li>`);
-  const index = `<html>
-<head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-</head>
-<body>
-<ol>${indexLinks.join('')}</ol>
-</body>
-
-</html>`;
-  return index;
-}
-
 function processPage(data)
 {
   /* const cleanParagraph = new RegExp('<p[^>]*>(.*?)</p>', 'ig');
@@ -84,8 +66,8 @@ function processPage(data)
   const $ = cheerio.load(pretty(data));
   const body = $('body');
   const style = $('style').html();
-  const head = `<head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style>${style || ''}</style></head>`;
-  body.prepend('<p><a href="index.html">Все правила</a></p>');
+  // const head = `<head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style>${style || ''}</style></head>`;
+  // body.prepend('<p><a href="index.html">Все правила</a></p>');
   body.find('span').each(function (index) {
     const size = $(this).css('font-size');
     if (!size)
@@ -122,7 +104,8 @@ function processPage(data)
       $(this).css('font-size', '+=2');
     }
   });
-  let html = `<html>${head}<body>${body.html()}</body></html>`;
+  // let html = `<html>${head}<body>${body.html()}</body></html>`;
+  let html = `<style>${style || ''}</style>${body.html()}`;
   html = pretty(html);
   html = decode(html);
   html = html.replace(new RegExp('&quot;', 'ig'), '\'');
@@ -154,8 +137,9 @@ async function run() {
     await fs.writeFile(getPagePath(page.filename), html);
   });
 
-  const index = makeIndexPage();
-  await fs.writeFile(getPagePath('index'), index, {encoding: 'utf8'});
+  await fs.writeJson('config/pages.json', pages, {spaces: 2}); // update doc names
+  // const index = makeIndexPage();
+  // await fs.writeFile(getPagePath('index'), index, {encoding: 'utf8'});
 }
 
 run();
