@@ -37,10 +37,11 @@ pages.forEach((page)=>{
     template: './src/index.ejs',
     inject: true,
     hash: true,
+    cache: false,
     filename: `${page.filename}.html`,
     title: page.name,
     content: page.content,
-    updated: moment().format('YYYY-MM-DD HH:MM'),
+    updated: moment().format('YYYY-MM-DD HH:mm'),
     links,
   });
   plugins.push(addPlugin);
