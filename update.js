@@ -114,16 +114,17 @@ function processPage(data)
 
 
 async function run() {
+  debug('Updating...');
+  await fs.ensureDir('./cache');
   await Promise.map(pages, async (page) => {
     let data;
-    await fs.ensureDir('./cache');
     const cacheFound = await fs.pathExists(getCachePath(page.filename));
     if (cacheFound) {
-      debug('fetching data from cache');
+      debug(`fetching data from cache ${page.filename}`);
       data = await fs.readFile(getCachePath(page.filename), {encoding: 'utf8'});
     }
     else {
-      debug('fetching data google docs');
+      debug(`fetching data from google docs ${page.id}`);
       const reply = await driveExport({fileId: page.id, mimeType: 'text/html'});
       const info = await driveInfo({fileId: page.id});
       page.name = info.data.name;
@@ -135,11 +136,11 @@ async function run() {
     }
     const html = processPage(data);
     await fs.writeFile(getPagePath(page.filename), html);
-  });
+    return Promise.delay(100);
+  }, {concurrency: 1});
 
   await fs.writeJson('config/pages.json', pages, {spaces: 2}); // update doc names
-  // const index = makeIndexPage();
-  // await fs.writeFile(getPagePath('index'), index, {encoding: 'utf8'});
+  debug('Updated.');
 }
 
 run();

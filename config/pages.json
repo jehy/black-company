@@ -1,5 +1,11 @@
 [
   {
+    "name": "Все тексты одним файлом 2 игра",
+    "filename": "full_rules_2",
+    "id": "1SOfCDgZF6YDr-ifD1zcMF8-Z0CT3RQ68oYQvCLap1t4",
+    "class": "alert alert-danger"
+  },
+  {
     "name": "Полигонные правила ЧО2",
     "filename": "field_rules",
     "id": "19TZ8zxMk06LETb0qlGKj05qUbOvoVxoDKOzggkV2gvc"
@@ -26,7 +32,7 @@
   },
   {
     "name": "Игровые правила - Хроники Черного Отряда часть 2",
-    "filename": "full_rules_2",
+    "filename": "full_rules_part_2",
     "id": "1cXqGzz6PPkZRRzROblWyueGc4a2NGoneJJ1sF0pUSE4"
   },
   {

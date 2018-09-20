@@ -13,7 +13,7 @@ function getLinkPath(filename) {
   return `${filename}.html`;
 }
 
-const links = pages.map(page => `<li><a href="${getLinkPath(page.filename)}">${page.name}</a></li>`).join('');
+const links = pages.map(page => `<li><a class="${page.class}" href="${getLinkPath(page.filename)}">${page.name}</a></li>`).join('');
 
 const plugins = [
   new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery' }),
