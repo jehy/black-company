@@ -28,6 +28,7 @@ const plugins = [
 
 pages.forEach((page)=>{
   page.content = fs.readFileSync(`pages/${page.filename}.html`, {encoding: 'utf8'});
+  page.original = `<p><a href="https://docs.google.com/document/d/${page.id}/edit">Оригинал статьи  в Google Docs</a></p>`;
 });
 
 pages.push({content: 'Пожалуйста, выберите нужную статью из ссылок справа', filename: 'index', name: 'Чёрный отряд 2018'});
@@ -42,6 +43,7 @@ pages.forEach((page)=>{
     title: page.name,
     content: page.content,
     updated: moment().format('YYYY-MM-DD HH:mm'),
+    original: page.original,
     links,
   });
   plugins.push(addPlugin);
@@ -50,7 +52,7 @@ pages.forEach((page)=>{
 module.exports = {
   entry: './src/js/index.js',
   devtool: 'source-map',
-  cache: true,
+  cache: false,
   mode: 'production',
   optimization: {
     minimizer: [
