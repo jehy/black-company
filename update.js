@@ -63,7 +63,12 @@ function processPage(data)
   // data = data.replace(addLink, '<body><p><a href="https://jehy.github.io/black-company/">Все правила</a></p>$1</body>');
   // data = data.substr(data.indexOf('<body'));
   // const body = $(data).find('body');
-  const $ = cheerio.load(pretty(data));
+  let clean = data.replace(/ style="color:inherit;text-decoration:inherit;"/g, '');
+  clean = clean.replace(/ style="color:inherit;text-decoration:inherit"/g, '');
+  // const fixLink = new RegExp(/"https:\/\/www\.google\.com\/url\?q=(.*?)"/g, 'ig');
+  // clean = clean.replace(fixLink, '"$1"');
+
+  const $ = cheerio.load(pretty(clean));
   const body = $('body');
   const style = $('style').html();
   // const head = `<head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style>${style || ''}</style></head>`;
